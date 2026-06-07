@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="ru"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #1a1a1a;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #b4b4bb;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Книга ответов — GarageBand Beat Sequencer</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #1a1a1a;
+  line-height: 1.7;
+  padding: 40px 20px;
+}
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #111;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 48px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 24px;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 56px;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  color: #222;
+}
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  color: #333;
+}
+p, li {
+  margin-bottom: 10px;
+  color: #2a2a2a;
+}
+ul, ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+.answer-block {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #1565C0;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 16px 0 28px 0;
+}
+.answer-block p {
+  margin-bottom: 8px;
+}
+.answer-block p:last-child {
+  margin-bottom: 0;
+}
+.open-answer {
+  border-left-color: #7B1FA2;
+  background: #faf8fc;
+}
+.correction {
+  border-left-color: #C62828;
+  background: #fef8f8;
+}
+.grid-container {
+  margin: 16px 0;
+  overflow-x: auto;
+}
+.toc {
+  background: #f5f7fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+.toc h2 {
+  margin-top: 0;
+  border-bottom: none;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+.toc li {
+  margin-bottom: 6px;
+}
+.toc li a {
+  color: #1565C0;
+  text-decoration: none;
+}
+.toc li a:hover {
+  text-decoration: underline;
+}
+.toc .ch-title {
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: #333;
+}
+strong {
+  font-weight: 600;
+}
+.label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 8px;
+}
+svg text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Книга ответов</h1>
+<p class="subtitle">GarageBand Beat Sequencer — Рабочая тетрадь</p>
+
+<nav class="toc">
+<h2>Содержание</h2>
+<ul>
+<li class="ch-title">Глава 1 — Первый бит</li>
+<li><a href="#ex1a">1A. Заполни сетку: We Will Rock You</a></li>
+<li><a href="#ex1b">1B. Вопросы на понимание</a></li>
+<li><a href="#ex1c">1C. Свой паттерн из 5 шагов</a></li>
+
+<li class="ch-title">Глава 2 — Money Beat</li>
+<li><a href="#ex2a">2A. Заполни сетку: Money Beat</a></li>
+<li><a href="#ex2b">2B. Вопросы на понимание</a></li>
+<li><a href="#ex2c">2C. Найди ошибку</a></li>
+
+<li class="ch-title">Глава 3 — Хай-хэт и деления</li>
+<li><a href="#ex3a">3A. Три сетки: четверти, восьмые, шестнадцатые</a></li>
+<li><a href="#ex3b">3B. Вопросы на понимание</a></li>
+<li><a href="#ex3c">3C. Stayin' Alive</a></li>
+
+<li class="ch-title">Глава 4 — Велосити</li>
+<li><a href="#ex4a">4A. Паттерн велосити хай-хэта</a></li>
+<li><a href="#ex4b">4B. Вопросы на понимание</a></li>
+<li><a href="#ex4c">4C. Свой паттерн с велосити</a></li>
+
+<li class="ch-title">Глава 5 — Жанры и темп</li>
+<li><a href="#ex5a">5A. House/EDM паттерн</a></li>
+<li><a href="#ex5b">5B. Вопросы на понимание</a></li>
+<li><a href="#ex5c">5C. Hip-hop паттерн</a></li>
+
+<li class="ch-title">Глава 6 — Структура песни</li>
+<li><a href="#ex6a">6A. Uptown Funk (куплет)</a></li>
+<li><a href="#ex6b">6B. Вопросы на понимание</a></li>
+<li><a href="#ex6c">6C. Два варианта: куплет и припев</a></li>
+
+<li class="ch-title">Глава 7 — Продвинутые функции</li>
+<li><a href="#ex7a">7A. Note Repeat (дробь)</a></li>
+<li><a href="#ex7b">7B. Вопросы на понимание</a></li>
+<li><a href="#ex7c">7C. Финальный проект</a></li>
+</ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch1">Глава 1 — Первый бит</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex1a">Упражнение 1A — Заполни сетку: We Will Rock You</h3>
+<p>Правильное заполнение: кик на шагах 1 и 5, клэп на шаге 9.</p>
+<div class="grid-container">
+<svg width="700" height="120" viewBox="-55 0 755 120">
+  <!-- Header -->
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <!-- Beat markers -->
+  <text x="50" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 1</text>
+  <text x="210" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 2</text>
+  <text x="370" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 3</text>
+  <text x="530" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 4</text>
+  <!-- Row labels -->
+  <text x="-37" y="48" font-size="11" fill="#333" text-anchor="middle">Kick</text>
+  <text x="-37" y="80" font-size="11" fill="#333" text-anchor="middle">Clap</text>
+  <!-- Kick row -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Clap row -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<h3 id="ex1b">Упражнение 1B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> 4 шага</p>
+<p><strong>(b)</strong> 4 бита</p>
+<p><strong>(c)</strong> Звук играет в этот момент</p>
+<p><strong>(d)</strong> Clap</p>
+</div>
+
+<h3 id="ex1c">Упражнение 1C — Свой паттерн из 5 шагов</h3>
+<div class="answer-block open-answer">
+<p><strong>Открытый ответ.</strong> Критерии проверки:</p>
+<ul>
+<li>Ровно 5 активных шагов в сетке</li>
+<li>Использованы оба ряда (Kick и Clap)</li>
+</ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch2">Глава 2 — Money Beat</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex2a">Упражнение 2A — Заполни сетку: Money Beat</h3>
+<p>Правильное заполнение: кик на шагах 1 и 9, снейр на шагах 5 и 13.</p>
+<div class="grid-container">
+<svg width="700" height="120" viewBox="-55 0 755 120">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="50" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 1</text>
+  <text x="210" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 2</text>
+  <text x="370" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 3</text>
+  <text x="530" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 4</text>
+  <text x="-37" y="48" font-size="11" fill="#333" text-anchor="middle">Kick</text>
+  <text x="-37" y="80" font-size="11" fill="#333" text-anchor="middle">Snare</text>
+  <!-- Kick row: 1, 9 -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<h3 id="ex2b">Упражнение 2B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> Бэкбит — удары снейра на битах 2 и 4 (шаги 5, 13). Это то, к чему слушатель хлопает.</p>
+<p><strong>(b)</strong> Шаг 11</p>
+<p><strong>(c)</strong> Потому что этот паттерн используется в тысячах коммерчески успешных песен.</p>
+</div>
+
+<h3 id="ex2c">Упражнение 2C — Найди ошибку</h3>
+<div class="answer-block correction">
+<p><strong>Ошибка:</strong> кик стоит на шаге 12, а должен быть на шаге 11.</p>
+</div>
+<p>Исправленная сетка (кик перемещён с шага 12 на шаг 11):</p>
+<div class="grid-container">
+<svg width="700" height="120" viewBox="-55 0 755 120">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="50" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 1</text>
+  <text x="210" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 2</text>
+  <text x="370" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 3</text>
+  <text x="530" y="112" font-size="10" fill="#aaa" text-anchor="middle">Бит 4</text>
+  <text x="-37" y="48" font-size="11" fill="#333" text-anchor="middle">Kick</text>
+  <text x="-37" y="80" font-size="11" fill="#333" text-anchor="middle">Snare</text>
+  <!-- Kick row: 1, 9, 11 (corrected) -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <!-- Step 12: crossed out (the error) -->
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#C62828" stroke-dasharray="4,2"></rect>
+  <line x1="472" y1="30" x2="508" y2="58" stroke="#C62828" stroke-width="1.5"></line>
+  <line x1="508" y1="30" x2="472" y2="58" stroke="#C62828" stroke-width="1.5"></line>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch3">Глава 3 — Хай-хэт и деления</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex3a">Упражнение 3A — Три сетки: четверти, восьмые, шестнадцатые</h3>
+
+<p class="label">Четвертные ноты (4 ячейки):</p>
+<div class="grid-container">
+<svg width="700" height="70" viewBox="-55 0 755 70">
+  <text x="50" y="16" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="16" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="16" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="16" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="16" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="16" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="16" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="16" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="16" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="16" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="16" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="16" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="16" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="16" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="16" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="16" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="42" font-size="11" fill="#333" text-anchor="middle">HH</text>
+  <!-- Steps 1,5,9,13 filled -->
+  <rect x="32" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<p class="label">Восьмые ноты (8 ячеек):</p>
+<div class="grid-container">
+<svg width="700" height="70" viewBox="-55 0 755 70">
+  <text x="50" y="16" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="16" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="16" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="16" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="16" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="16" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="16" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="16" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="16" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="16" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="16" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="16" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="16" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="16" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="16" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="16" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="42" font-size="11" fill="#333" text-anchor="middle">HH</text>
+  <!-- Steps 1,3,5,7,9,11,13,15 filled -->
+  <rect x="32" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<p class="label">Шестнадцатые ноты (16 ячеек):</p>
+<div class="grid-container">
+<svg width="700" height="70" viewBox="-55 0 755 70">
+  <text x="50" y="16" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="16" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="16" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="16" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="16" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="16" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="16" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="16" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="16" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="16" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="16" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="16" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="16" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="16" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="16" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="16" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="42" font-size="11" fill="#333" text-anchor="middle">HH</text>
+  <!-- All 16 steps filled -->
+  <rect x="32" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="112" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="192" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="272" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="352" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="432" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="512" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="592" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="26" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+</svg>
+</div>
+
+<h3 id="ex3b">Упражнение 3B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> 8</p>
+<p><strong>(b)</strong> Создаёт движение и непрерывность — как тикающие часы.</p>
+<p><strong>(c)</strong> Кик — Снейр — Хай-хэт (основа — акцент — движение)</p>
+</div>
+
+<h3 id="ex3c">Упражнение 3C — Stayin' Alive</h3>
+<p>Полный паттерн: хай-хэт на всех 16 шагах, снейр на 5 и 13, кик на 1, 4, 9, 12.</p>
+<div class="grid-container">
+<svg width="700" height="152" viewBox="-55 0 755 152">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="44" font-size="10" fill="#333" text-anchor="middle">HH</text>
+  <text x="-37" y="78" font-size="10" fill="#333" text-anchor="middle">Snare</text>
+  <text x="-37" y="112" font-size="10" fill="#333" text-anchor="middle">Kick</text>
+  <!-- Hi-Hat row: all 16 -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Kick row: 1, 4, 9, 12 -->
+  <rect x="32" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="192" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="392" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="512" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch4">Глава 4 — Велосити</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex4a">Упражнение 4A — Паттерн велосити хай-хэта</h3>
+<p>Все 16 шагов активны. Шаги 1, 5, 9, 13 — громкие (полная непрозрачность, отмечены треугольником вверх). Остальные — тихие (40% непрозрачности, треугольник вниз).</p>
+<div class="grid-container">
+<svg width="700" height="90" viewBox="-55 0 755 90">
+  <text x="50" y="16" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="16" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="16" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="16" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="16" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="16" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="16" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="16" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="16" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="16" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="16" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="16" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="16" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="16" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="16" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="16" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="42" font-size="11" fill="#333" text-anchor="middle">HH</text>
+  <!-- Loud steps: 1,5,9,13 (full opacity) -->
+  <rect x="32" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="1" stroke="#2E7D32"></rect>
+  <rect x="72" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="112" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="152" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="192" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="1" stroke="#2E7D32"></rect>
+  <rect x="232" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="272" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="312" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="352" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="1" stroke="#2E7D32"></rect>
+  <rect x="392" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="432" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="472" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="512" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="1" stroke="#2E7D32"></rect>
+  <rect x="552" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="592" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <rect x="632" y="26" width="36" height="28" rx="3" fill="#2E7D32" fill-opacity="0.4" stroke="#2E7D32" stroke-opacity="0.5"></rect>
+  <!-- Velocity indicators -->
+  <text x="50" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" font-weight="bold">▲</text>
+  <text x="90" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="130" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="170" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="210" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" font-weight="bold">▲</text>
+  <text x="250" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="290" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="330" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="370" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" font-weight="bold">▲</text>
+  <text x="410" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="450" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="490" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="530" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" font-weight="bold">▲</text>
+  <text x="570" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="610" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+  <text x="650" y="72" font-size="13" fill="#2E7D32" text-anchor="middle" opacity="0.5">▽</text>
+</svg>
+</div>
+
+<h3 id="ex4b">Упражнение 4B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> Велосити — сила удара, от 0 до 127.</p>
+<p><strong>(b)</strong> Очень тихие удары (велосити ~20-40) между основными, добавляющие текстуру.</p>
+<p><strong>(c)</strong> Потому что реальный барабанщик варьирует силу ударов — одинаковая громкость = нет грува.</p>
+</div>
+
+<h3 id="ex4c">Упражнение 4C — Свой паттерн с велосити</h3>
+<div class="answer-block open-answer">
+<p><strong>Открытый ответ.</strong> Критерии проверки:</p>
+<ul>
+<li>Биты 1, 5, 9, 13 отмечены как громкие (полная непрозрачность / треугольник вверх)</li>
+<li>Промежуточные шаги отмечены как тихие (пониженная непрозрачность / треугольник вниз)</li>
+<li>Присутствует контраст между громкими и тихими ударами</li>
+</ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch5">Глава 5 — Жанры и темп</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex5a">Упражнение 5A — House / EDM паттерн</h3>
+<p>Four-on-the-floor кик, снейр на бэкбитах, хай-хэт только на офф-битах.</p>
+<div class="grid-container">
+<svg width="700" height="152" viewBox="-55 0 755 152">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="44" font-size="10" fill="#333" text-anchor="middle">HH</text>
+  <text x="-37" y="78" font-size="10" fill="#333" text-anchor="middle">Snare</text>
+  <text x="-37" y="112" font-size="10" fill="#333" text-anchor="middle">Kick</text>
+  <!-- Hi-Hat row: offbeats 3,7,11,15 -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Kick row: four-on-the-floor 1,5,9,13 -->
+  <rect x="32" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="232" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="392" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="552" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<h3 id="ex5b">Упражнение 5B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> Beats Per Minute — удары в минуту, скорость музыки.</p>
+<p><strong>(b)</strong> 70-100 BPM</p>
+<p><strong>(c)</strong> Кик на каждом бите (шаги 1, 5, 9, 13) — основа хауса и EDM.</p>
+<p><strong>(d)</strong> Один и тот же паттерн на 70 BPM — хип-хоп, на 120 — рок, на 160 — драм-н-бэйс.</p>
+</div>
+
+<h3 id="ex5c">Упражнение 5C — Hip-hop паттерн</h3>
+<p>Хай-хэт на всех 16 шагах, снейр на бэкбитах, кик разреженный и синкопированный.</p>
+<div class="grid-container">
+<svg width="700" height="152" viewBox="-55 0 755 152">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="44" font-size="10" fill="#333" text-anchor="middle">HH</text>
+  <text x="-37" y="78" font-size="10" fill="#333" text-anchor="middle">Snare</text>
+  <text x="-37" y="112" font-size="10" fill="#333" text-anchor="middle">Kick</text>
+  <!-- Hi-Hat row: all 16 -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Kick row: 1, 4, 10, 13 (sparse, syncopated) -->
+  <rect x="32" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="192" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="432" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="552" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch6">Глава 6 — Структура песни</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex6a">Упражнение 6A — Uptown Funk (куплет)</h3>
+<p>Хай-хэт восьмыми, снейр на бэкбитах, кик на шагах 1, 7, 9, 11.</p>
+<div class="grid-container">
+<svg width="700" height="152" viewBox="-55 0 755 152">
+  <text x="50" y="20" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="20" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="20" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="20" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="20" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="20" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="20" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="20" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="20" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="20" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="20" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="20" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="20" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="20" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="20" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="20" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="44" font-size="10" fill="#333" text-anchor="middle">HH</text>
+  <text x="-37" y="78" font-size="10" fill="#333" text-anchor="middle">Snare</text>
+  <text x="-37" y="112" font-size="10" fill="#333" text-anchor="middle">Kick</text>
+  <!-- Hi-Hat row: eighths 1,3,5,7,9,11,13,15 -->
+  <rect x="32" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="72" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="152" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="232" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="312" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="392" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="472" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="552" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="30" width="36" height="28" rx="3" fill="#2E7D32" stroke="#2E7D32"></rect>
+  <rect x="632" y="30" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Snare row: 5, 13 -->
+  <rect x="32" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="64" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="64" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Kick row: 1, 7, 9, 11 -->
+  <rect x="32" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="72" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="232" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="312" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="392" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="98" width="36" height="28" rx="3" fill="#E65100" stroke="#E65100"></rect>
+  <rect x="472" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="552" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="592" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="632" y="98" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+</svg>
+</div>
+
+<h3 id="ex6b">Упражнение 6B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> Интро, куплет, припев, аутро (также бридж).</p>
+<p><strong>(b)</strong> Куплет — проще и тише; припев — плотнее, больше ударов, быстрее хай-хэт.</p>
+<p><strong>(c)</strong> Постепенное добавление слоёв для нарастания энергии перед сменой секции.</p>
+</div>
+
+<h3 id="ex6c">Упражнение 6C — Два варианта: куплет и припев</h3>
+<div class="answer-block open-answer">
+<p><strong>Открытый ответ.</strong> Критерии проверки:</p>
+<ul>
+<li>Вариант для intro/verse заметно разрежённее, чем для chorus</li>
+<li>Есть различие в плотности (количество активных шагов)</li>
+<li>Оба варианта используют общую основу (снейр на бэкбитах сохранён)</li>
+</ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2 id="ch7">Глава 7 — Продвинутые функции</h2>
+<!-- ═══════════════════════════════════════════════════ -->
+
+<h3 id="ex7a">Упражнение 7A — Note Repeat (дробь)</h3>
+<p>Ряд снейра с Note Repeat на шагах 15 и 16 (обозначены маркировкой «x4» — четыре быстрых повтора на каждый шаг).</p>
+<div class="grid-container">
+<svg width="700" height="80" viewBox="-55 0 755 80">
+  <text x="50" y="16" font-size="11" fill="#888" text-anchor="middle">1</text>
+  <text x="90" y="16" font-size="11" fill="#888" text-anchor="middle">2</text>
+  <text x="130" y="16" font-size="11" fill="#888" text-anchor="middle">3</text>
+  <text x="170" y="16" font-size="11" fill="#888" text-anchor="middle">4</text>
+  <text x="210" y="16" font-size="11" fill="#888" text-anchor="middle">5</text>
+  <text x="250" y="16" font-size="11" fill="#888" text-anchor="middle">6</text>
+  <text x="290" y="16" font-size="11" fill="#888" text-anchor="middle">7</text>
+  <text x="330" y="16" font-size="11" fill="#888" text-anchor="middle">8</text>
+  <text x="370" y="16" font-size="11" fill="#888" text-anchor="middle">9</text>
+  <text x="410" y="16" font-size="11" fill="#888" text-anchor="middle">10</text>
+  <text x="450" y="16" font-size="11" fill="#888" text-anchor="middle">11</text>
+  <text x="490" y="16" font-size="11" fill="#888" text-anchor="middle">12</text>
+  <text x="530" y="16" font-size="11" fill="#888" text-anchor="middle">13</text>
+  <text x="570" y="16" font-size="11" fill="#888" text-anchor="middle">14</text>
+  <text x="610" y="16" font-size="11" fill="#888" text-anchor="middle">15</text>
+  <text x="650" y="16" font-size="11" fill="#888" text-anchor="middle">16</text>
+  <text x="-37" y="42" font-size="10" fill="#333" text-anchor="middle">Snare</text>
+  <!-- Steps: 5 and 13 normal, 15 and 16 with note repeat -->
+  <rect x="32" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="72" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="112" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="152" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="192" y="26" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="232" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="272" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="312" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="352" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="392" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="432" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="472" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <rect x="512" y="26" width="36" height="28" rx="3" fill="#1565C0" stroke="#1565C0"></rect>
+  <rect x="552" y="26" width="36" height="28" rx="3" fill="#fff" stroke="#bbb"></rect>
+  <!-- Step 15: Note Repeat -->
+  <rect x="592" y="26" width="36" height="28" rx="3" fill="#1565C0" stroke="#0D47A1" stroke-width="2"></rect>
+  <text x="610" y="45" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">x4</text>
+  <!-- Step 16: Note Repeat -->
+  <rect x="632" y="26" width="36" height="28" rx="3" fill="#1565C0" stroke="#0D47A1" stroke-width="2"></rect>
+  <text x="650" y="45" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">x4</text>
+  <!-- Label -->
+  <text x="630" y="72" font-size="10" fill="#0D47A1" text-anchor="middle">Note Repeat</text>
+  <line x1="600" y1="56" x2="600" y2="64" stroke="#0D47A1" stroke-width="1"></line>
+  <line x1="660" y1="56" x2="660" y2="64" stroke="#0D47A1" stroke-width="1"></line>
+  <line x1="600" y1="64" x2="660" y2="64" stroke="#0D47A1" stroke-width="1"></line>
+</svg>
+</div>
+
+<h3 id="ex7b">Упражнение 7B — Вопросы на понимание</h3>
+<div class="answer-block">
+<p><strong>(a)</strong> Случайным образом включает или не включает шаг при каждом повторе — создаёт вариативность.</p>
+<p><strong>(b)</strong> Разделяет один шаг на несколько быстрых повторов — для дробей и роллов.</p>
+<p><strong>(c)</strong> Свинг сдвигает офф-биты чуть позже, создавая расслабленное, качающееся ощущение вместо механической точности.</p>
+<p><strong>(d)</strong> Разные ряды с разной длиной лупа — паттерны фазируются относительно друг друга.</p>
+</div>
+
+<h3 id="ex7c">Упражнение 7C — Финальный проект</h3>
+<div class="answer-block open-answer">
+<p><strong>Открытый ответ.</strong> Критерии проверки:</p>
+<ul>
+<li>Использованы минимум 3 инструмента (ряда)</li>
+<li>Есть разница в велосити (громкие и тихие удары)</li>
+<li>Вариация отличается от основного паттерна по плотности</li>
+</ul>
+</div>
+
+</div>
+
+</body></html>

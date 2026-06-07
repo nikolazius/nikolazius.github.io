@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="ru"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #1a1a1a;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #b4b4bb;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GarageBand Beat Sequencer — Краткое руководство</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #ffffff;
+    padding: 3rem 1.5rem;
+    max-width: 740px;
+    margin: 0 auto;
+}
+h1 { font-size: 1.8rem; font-weight: 700; margin: 3rem 0 1.5rem 0; color: #111; letter-spacing: -0.02em; }
+h2 { font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 1rem 0; color: #222; }
+h3 { font-size: 1.1rem; font-weight: 600; margin: 2rem 0 0.75rem 0; color: #333; }
+p { margin: 0 0 1.2rem 0; }
+ul, ol { margin: 0 0 1.2rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+th, td { border: 1px solid #ddd; padding: 0.6rem 0.8rem; text-align: left; }
+th { background: #f5f5f5; font-weight: 600; }
+blockquote { border-left: 3px solid #ccc; padding-left: 1.2rem; margin: 1.5rem 0; color: #444; font-style: italic; }
+hr { border: none; border-top: 1px solid #e0e0e0; margin: 4rem 0; }
+svg { display: block; margin: 1.5rem auto; max-width: 100%; height: auto; }
+figure { margin: 2rem 0; }
+figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.5rem; }
+section { margin-bottom: 2rem; }
+section:first-of-type h1 { margin-top: 0; }
+#toc { margin: 2rem 0 3rem 0; padding: 1.5rem 2rem; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 4px; }
+#toc h2 { font-size: 1.1rem; margin: 0 0 1rem 0; color: #333; }
+#toc ol { margin: 0; padding-left: 0; list-style: none; }
+#toc li { margin-bottom: 0.5rem; }
+#toc a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #ccc; }
+#toc a:hover { border-bottom-color: #333; }
+.book-title { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+.book-subtitle { font-size: 1.1rem; color: #555; margin-bottom: 2rem; }
+.diagram { margin: 2rem 0; }
+.diagram-caption, .figure-caption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.5rem; }
+.diagram-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+
+<div class="book-title">GarageBand Beat Sequencer</div>
+<div class="book-subtitle">Краткое руководство по созданию битов</div>
+
+<nav id="toc">
+<h2>Содержание</h2>
+<ol>
+<li><a href="#ch-0">0. Как устроены звук и музыка</a></li>
+<li><a href="#ch-1">1. Что такое бит?</a></li>
+<li><a href="#ch-2">2. Кик и снейр</a></li>
+<li><a href="#ch-3">3. Хай-хэт и слои</a></li>
+<li><a href="#ch-4">4. Велосити и динамика</a></li>
+<li><a href="#ch-5">5. Темп и жанр</a></li>
+<li><a href="#ch-6">6. Структура песни</a></li>
+<li><a href="#ch-7">7. Продвинутые функции и композиция</a></li>
+</ol>
+</nav>
+
+<section id="ch-0">
+<h1>0. Как устроены звук и музыка</h1>
+
+<p>Музыка — это организованный звук. Прежде чем создавать биты, полезно понять базовые принципы: что такое звук, почему ноты бывают высокими и низкими, и как ноты связаны друг с другом.</p>
+
+<h2>Что такое звук</h2>
+
+<p>Звук — это вибрация, распространяющаяся по воздуху. Когда что-то вибрирует (струна гитары, мембрана барабана, динамик), воздух колеблется волнами. Эти волны достигают уха, и мозг интерпретирует их как звук.</p>
+
+<p>Два главных свойства звука:</p>
+<ul>
+<li><strong>Высота</strong> (pitch) — определяется частотой вибрации</li>
+<li><strong>Громкость</strong> (volume) — определяется амплитудой вибрации</li>
+</ul>
+
+<div class="diagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+  <line x1="40" y1="100" x2="560" y2="100" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,4"></line>
+  <path d="M 40 100 Q 90 30, 140 100 Q 190 170, 240 100 Q 290 30, 340 100 Q 390 170, 440 100 Q 490 30, 540 100" fill="none" stroke="#1d1d1f" stroke-width="2"></path>
+  <line x1="40" y1="175" x2="240" y2="175" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="40" y1="170" x2="40" y2="180" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="240" y1="170" x2="240" y2="180" stroke="#1d1d1f" stroke-width="1"></line>
+  <text x="140" y="193" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#424245">длина волны (один цикл)</text>
+  <line x1="555" y1="100" x2="555" y2="37" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="551" y1="45" x2="555" y2="37" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="559" y1="45" x2="555" y2="37" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="551" y1="92" x2="555" y2="100" stroke="#1d1d1f" stroke-width="1"></line>
+  <line x1="559" y1="92" x2="555" y2="100" stroke="#1d1d1f" stroke-width="1"></line>
+  <text x="575" y="72" text-anchor="start" font-size="13" font-family="-apple-system, sans-serif" fill="#424245">амплитуда</text>
+</svg>
+</div>
+
+<h2>Высота и частота</h2>
+
+<p>Частота — сколько раз в секунду воздух колеблется, измеряется в герцах (Гц). Больше герц = выше звук.</p>
+
+<ul>
+<li>Бас-бочка: ~60–100 Гц</li>
+<li>Человеческий голос: ~100–300 Гц</li>
+<li>Хай-хэт: ~3 000–10 000 Гц</li>
+</ul>
+
+<div class="diagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="260" viewBox="0 0 600 260">
+  <line x1="40" y1="65" x2="560" y2="65" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,4"></line>
+  <path d="M 40 65 Q 140 10, 240 65 Q 340 120, 440 65 Q 490 40, 540 65" fill="none" stroke="#1d1d1f" stroke-width="2"></path>
+  <text x="40" y="28" font-size="13" font-family="-apple-system, sans-serif" fill="#424245">Низкая частота — мало циклов, длинная волна</text>
+  <line x1="40" y1="195" x2="560" y2="195" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,4"></line>
+  <path d="M 40 195 Q 57 160, 73 195 Q 90 230, 107 195 Q 123 160, 140 195 Q 157 230, 173 195 Q 190 160, 207 195 Q 223 230, 240 195 Q 257 160, 273 195 Q 290 230, 307 195 Q 323 160, 340 195 Q 357 230, 373 195 Q 390 160, 407 195 Q 423 230, 440 195 Q 457 160, 473 195 Q 490 230, 507 195 Q 523 160, 540 195" fill="none" stroke="#1d1d1f" stroke-width="2"></path>
+  <text x="40" y="158" font-size="13" font-family="-apple-system, sans-serif" fill="#424245">Высокая частота — много циклов, короткая волна</text>
+</svg>
+</div>
+
+<h2>Ноты</h2>
+
+<p>В западной музыке 12 нот: C, C#, D, D#, E, F, F#, G, G#, A, A#, B. После B последовательность повторяется на октаву выше. Расстояние между соседними нотами — полутон.</p>
+
+<div class="diagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+  <rect x="72" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="134" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="196" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="258" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="320" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="382" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="444" y="40" width="60" height="130" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5"></rect>
+  <rect x="112" y="40" width="36" height="80" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1" rx="2"></rect>
+  <rect x="174" y="40" width="36" height="80" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1" rx="2"></rect>
+  <rect x="298" y="40" width="36" height="80" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1" rx="2"></rect>
+  <rect x="360" y="40" width="36" height="80" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1" rx="2"></rect>
+  <rect x="422" y="40" width="36" height="80" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1" rx="2"></rect>
+  <text x="102" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">C</text>
+  <text x="164" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">D</text>
+  <text x="226" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">E</text>
+  <text x="288" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">F</text>
+  <text x="350" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">G</text>
+  <text x="412" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">A</text>
+  <text x="474" y="185" text-anchor="middle" font-size="13" font-family="-apple-system, sans-serif" fill="#1d1d1f">B</text>
+  <text x="130" y="133" text-anchor="middle" font-size="11" font-family="-apple-system, sans-serif" fill="#ffffff">C#</text>
+  <text x="192" y="133" text-anchor="middle" font-size="11" font-family="-apple-system, sans-serif" fill="#ffffff">D#</text>
+  <text x="316" y="133" text-anchor="middle" font-size="11" font-family="-apple-system, sans-serif" fill="#ffffff">F#</text>
+  <text x="378" y="133" text-anchor="middle" font-size="11" font-family="-apple-system, sans-serif" fill="#ffffff">G#</text>
+  <text x="440" y="133" text-anchor="middle" font-size="11" font-family="-apple-system, sans-serif" fill="#ffffff">A#</text>
+  <text x="288" y="25" text-anchor="middle" font-size="12" font-family="-apple-system, sans-serif" fill="#6e6e73">одна октава — 12 полутонов</text>
+</svg>
+</div>
+
+<h2>Гаммы</h2>
+
+<p>Гамма — набор из 7 нот (из 12 возможных), которые хорошо звучат вместе. Две основные:</p>
+<ul>
+<li><strong>Мажорная</strong> — светлая, радостная (C D E F G A B)</li>
+<li><strong>Минорная</strong> — тёмная, эмоциональная (A B C D E F G)</li>
+</ul>
+
+<blockquote>Для Beat Sequencer гаммы не нужны — барабаны не имеют традиционной высоты звука. Но когда добавишь басовую линию или мелодию, гаммы определят, какие ноты использовать.</blockquote>
+
+<h2>Ритм</h2>
+
+<p>Высота определяет <em>какой</em> звук. Ритм определяет <em>когда</em> он звучит.</p>
+
+<p>Равномерный пульс — это <strong>бит</strong>. Биты группируются в <strong>такты</strong> (обычно по 4 бита). Beat Sequencer в GarageBand даёт 16 шагов на такт — это 4 подразделения каждого бита.</p>
+
+<h2>Три измерения музыки</h2>
+
+<table>
+<thead><tr><th>Измерение</th><th>Что определяет</th><th>В Beat Sequencer</th></tr></thead>
+<tbody>
+<tr><td>Высота</td><td>Какой звук</td><td>Выбор строки (кик, снейр, хай-хэт)</td></tr>
+<tr><td>Ритм</td><td>Когда звучит</td><td>Шаги вкл/выкл (столбцы)</td></tr>
+<tr><td>Динамика</td><td>Насколько громко</td><td>Режим Velocity</td></tr>
+</tbody>
+</table>
+
+</section>
+<hr>
+
+<section id="ch-1">
+<h1>1. Что такое бит?</h1>
+
+<p>Бит — это равномерный пульс, основа любой музыки. Когда ты притопываешь ногой под песню — ты отслеживаешь бит. Вспомни «We Will Rock You» группы Queen: топ-топ-хлоп, топ-топ-хлоп. Это и есть ритм в чистом виде.</p>
+
+<p>Beat Sequencer — инструмент, превращающий создание ритма в визуальный процесс. Вместо игры в реальном времени ты размещаешь звуки на сетке. Сетка отвечает за тайминг. Ты — за творчество.</p>
+
+<h2>Пульс и такты</h2>
+
+<p>Пульс организуется в группы по 4. Каждая группа — <strong>такт</strong>. Считай: 1, 2, 3, 4 — повтор. Это базовая единица времени в популярной музыке.</p>
+
+<h2>Сетка секвенсора</h2>
+
+<p>Сетка: <strong>строки</strong> = разные звуки барабанов, <strong>столбцы</strong> = моменты времени (шаги). Стандарт — 16 шагов. Каждые 4 шага = один бит. Четыре бита = один такт.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="180" viewBox="0 0 620 180">
+                <!-- Beat labels -->
+                <text x="95" y="20" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 1</text>
+                <text x="227" y="20" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 2</text>
+                <text x="359" y="20" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 3</text>
+                <text x="491" y="20" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 4</text>
+
+                <!-- Row labels -->
+                <text x="30" y="62" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Kick</text>
+                <text x="30" y="102" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Snare</text>
+                <text x="30" y="142" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Hi-Hat</text>
+
+                <!-- Grid cells - Row 1 (Kick) -->
+                <rect x="63" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="35" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Grid cells - Row 2 (Snare) -->
+                <rect x="63" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="75" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Grid cells - Row 3 (Hi-Hat) -->
+                <rect x="63" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="115" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Step numbers -->
+                <text x="79" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">1</text>
+                <text x="112" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">2</text>
+                <text x="145" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">3</text>
+                <text x="178" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">4</text>
+                <text x="211" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">5</text>
+                <text x="244" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">6</text>
+                <text x="277" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">7</text>
+                <text x="310" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">8</text>
+                <text x="343" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">9</text>
+                <text x="376" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">10</text>
+                <text x="409" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">11</text>
+                <text x="442" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">12</text>
+                <text x="475" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">13</text>
+                <text x="508" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">14</text>
+                <text x="541" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">15</text>
+                <text x="574" y="165" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">16</text>
+
+                <!-- Beat group dividers -->
+                <line x1="195" y1="30" x2="195" y2="153" stroke="#999" stroke-width="1.5"></line>
+                <line x1="327" y1="30" x2="327" y2="153" stroke="#999" stroke-width="1.5"></line>
+                <line x1="459" y1="30" x2="459" y2="153" stroke="#999" stroke-width="1.5"></line>
+            </svg>
+<div class="diagram-caption">Пустая сетка из 16 шагов. Три строки: Kick, Snare, Hi-Hat. Вертикальные линии — границы битов.</div>
+
+<p>Включённый шаг = звук играет в этот момент. Секвенсор проходит слева направо по всем 16 шагам, запуская активные звуки. Полный проход = один такт.</p>
+
+<h2>Первый звук</h2>
+
+<p>Включи шаг 1 в строке Kick. Нажми Play — кик звучит раз за такт. Теперь включи ещё шаг 9. Кик звучит дважды: на бит 1 и бит 3.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="100" viewBox="0 0 620 100">
+                <!-- Beat labels -->
+                <text x="95" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 1</text>
+                <text x="227" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 2</text>
+                <text x="359" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 3</text>
+                <text x="491" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 4</text>
+
+                <!-- Row label -->
+                <text x="30" y="52" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Kick</text>
+
+                <!-- Grid cells -->
+                <rect x="63" y="28" width="33" height="33" fill="#E65100" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="28" width="33" height="33" fill="#E65100" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Step numbers -->
+                <text x="79" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">1</text>
+                <text x="112" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">2</text>
+                <text x="145" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">3</text>
+                <text x="178" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">4</text>
+                <text x="211" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">5</text>
+                <text x="244" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">6</text>
+                <text x="277" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">7</text>
+                <text x="310" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">8</text>
+                <text x="343" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">9</text>
+                <text x="376" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">10</text>
+                <text x="409" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">11</text>
+                <text x="442" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">12</text>
+                <text x="475" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">13</text>
+                <text x="508" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">14</text>
+                <text x="541" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">15</text>
+                <text x="574" y="78" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">16</text>
+
+                <!-- Beat group dividers -->
+                <line x1="195" y1="23" x2="195" y2="66" stroke="#999" stroke-width="1.5"></line>
+                <line x1="327" y1="23" x2="327" y2="66" stroke="#999" stroke-width="1.5"></line>
+                <line x1="459" y1="23" x2="459" y2="66" stroke="#999" stroke-width="1.5"></line>
+            </svg>
+<div class="diagram-caption">Кик на шагах 1 и 9 — звучит на битах 1 и 3.</div>
+
+<h2>Воссоздаём «We Will Rock You» — Queen</h2>
+
+<p>Вся песня построена на перкуссии тела: два притопа и хлопок. На сетке: Kick на шагах 1 и 5 (притопы), Clap на шаге 9 (хлопок). Шаги 10–16 — тишина (пауза перед повтором).</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="130" viewBox="0 0 620 130">
+                <!-- Beat labels -->
+                <text x="95" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 1</text>
+                <text x="227" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 2</text>
+                <text x="359" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 3</text>
+                <text x="491" y="16" font-family="-apple-system, sans-serif" font-size="11" fill="#666" text-anchor="middle">Бит 4</text>
+
+                <!-- Row labels -->
+                <text x="30" y="52" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Kick</text>
+                <text x="30" y="92" font-family="-apple-system, sans-serif" font-size="12" fill="#333" text-anchor="middle">Clap</text>
+
+                <!-- Grid cells - Row 1 (Kick) -->
+                <rect x="63" y="28" width="33" height="33" fill="#E65100" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="28" width="33" height="33" fill="#E65100" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="28" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Grid cells - Row 2 (Clap) -->
+                <rect x="63" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="96" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="129" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="162" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="195" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="228" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="261" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="294" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="327" y="68" width="33" height="33" fill="#1565C0" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="360" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="393" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="426" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="459" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="492" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="525" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+                <rect x="558" y="68" width="33" height="33" fill="#f9f9f9" stroke="#ccc" stroke-width="1"></rect>
+
+                <!-- Step numbers -->
+                <text x="79" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">1</text>
+                <text x="112" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">2</text>
+                <text x="145" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">3</text>
+                <text x="178" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">4</text>
+                <text x="211" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">5</text>
+                <text x="244" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">6</text>
+                <text x="277" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">7</text>
+                <text x="310" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">8</text>
+                <text x="343" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">9</text>
+                <text x="376" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">10</text>
+                <text x="409" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">11</text>
+                <text x="442" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">12</text>
+                <text x="475" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">13</text>
+                <text x="508" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">14</text>
+                <text x="541" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">15</text>
+                <text x="574" y="118" font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">16</text>
+
+                <!-- Beat group dividers -->
+                <line x1="195" y1="23" x2="195" y2="106" stroke="#999" stroke-width="1.5"></line>
+                <line x1="327" y1="23" x2="327" y2="106" stroke="#999" stroke-width="1.5"></line>
+                <line x1="459" y1="23" x2="459" y2="106" stroke="#999" stroke-width="1.5"></line>
+
+                <!-- Legend -->
+                <rect x="63" y="120" width="8" height="8" fill="#E65100"></rect>
+                <text x="76" y="128" font-family="-apple-system, sans-serif" font-size="9" fill="#666">Kick (притоп)</text>
+                <rect x="150" y="120" width="8" height="8" fill="#1565C0"></rect>
+                <text x="163" y="128" font-family="-apple-system, sans-serif" font-size="9" fill="#666">Clap</text>
+            </svg>
+<div class="diagram-caption">«We Will Rock You»: Kick на шагах 1, 5 | Clap на шаге 9. Остальные шаги — тишина.</div>
+
+<p>Тишина — такая же часть ритма, как звук. Пустые шаги создают напряжение перед следующим циклом.</p>
+
+</section>
+<hr>
+
+<section id="ch-2">
+<h1>2. Кик и снейр</h1>
+
+<p>Кик и снейр — два главных звука ударной установки. Вместе они образуют основу почти любого бита в популярной музыке.</p>
+
+<h2>Кик (бас-бочка)</h2>
+
+<p>Глубокий, низкий удар — фундамент бита. В большинстве музыки кик стоит на бите 1 (шаг 1) и бите 3 (шаг 9) — сильные доли.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 40">
+    <text x="0" y="26" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Kick</text>
+    <!-- 16 cells -->
+    <rect x="36" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="66" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="186" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="306" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="366" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="426" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- step numbers -->
+    <text x="46" y="38" font-family="-apple-system, sans-serif" font-size="8" fill="#fff" text-anchor="middle">1</text>
+    <text x="286" y="38" font-family="-apple-system, sans-serif" font-size="8" fill="#fff" text-anchor="middle">9</text>
+  </svg>
+<div class="diagram-caption">Кик: шаги 1 и 9 (биты 1 и 3).</div>
+
+<h2>Снейр (малый барабан)</h2>
+
+<p>Острый, резкий щелчок — контраст кику. Снейр стоит на бите 2 (шаг 5) и бите 4 (шаг 13). Это называется <strong>бэкбит</strong> — то, от чего кивают головой.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 40">
+    <text x="0" y="26" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Snare</text>
+    <rect x="36" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="66" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="8" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="186" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="306" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="366" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="8" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="426" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- step numbers -->
+    <text x="166" y="38" font-family="-apple-system, sans-serif" font-size="8" fill="#fff" text-anchor="middle">5</text>
+    <text x="406" y="38" font-family="-apple-system, sans-serif" font-size="8" fill="#fff" text-anchor="middle">13</text>
+  </svg>
+<div class="diagram-caption">Снейр: шаги 5 и 13 (биты 2 и 4 — бэкбит).</div>
+
+<h2>Базовый бит</h2>
+
+<p>Кик на 1 и 3, снейр на 2 и 4 — это «money beat». Используется в тысячах песен от рока до хип-хопа.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 76">
+    <!-- Kick row -->
+    <text x="0" y="24" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Kick</text>
+    <rect x="36" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="66" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="186" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="306" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="366" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="426" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- Snare row -->
+    <text x="0" y="58" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Snare</text>
+    <rect x="36" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="66" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="42" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="186" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="306" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="366" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="42" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="426" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- Beat markers -->
+    <text x="50" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">Бит 1</text>
+    <text x="170" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">Бит 2</text>
+    <text x="290" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">Бит 3</text>
+    <text x="410" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">Бит 4</text>
+  </svg>
+<div class="diagram-caption">«Money beat»: кик чередуется со снейром по всем четырём битам такта.</div>
+
+<h2>Пошаговая сборка</h2>
+
+<p>Наблюдай, как меняется ощущение ритма с каждым добавленным элементом:</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 36">
+      <text x="0" y="22" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Kick</text>
+      <rect x="36" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="66" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="186" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="306" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="426" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 36">
+      <text x="0" y="22" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Kick</text>
+      <rect x="36" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="66" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="186" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="306" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="426" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 66">
+      <text x="0" y="20" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Kick</text>
+      <rect x="36" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="66" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="186" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="306" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="426" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <text x="0" y="50" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Snare</text>
+      <rect x="36" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="66" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="36" width="28" height="22" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="186" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="306" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="426" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 66">
+      <text x="0" y="20" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Kick</text>
+      <rect x="36" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="66" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="186" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="6" width="28" height="22" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="306" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="426" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="6" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <text x="0" y="50" font-family="-apple-system, sans-serif" font-size="10" fill="#444">Snare</text>
+      <rect x="36" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="66" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="96" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="126" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="156" y="36" width="28" height="22" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="186" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="216" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="246" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="276" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="306" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="336" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="366" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="396" y="36" width="28" height="22" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+      <rect x="426" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="456" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+      <rect x="486" y="36" width="28" height="22" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    </svg>
+
+<h2>«Billie Jean» — Michael Jackson</h2>
+
+<p>Один из самых известных битов. Паттерн почти идентичен базовому, с одним отличием: дополнительный кик на шаге 11.</p>
+
+<p>Кик: шаги 1, 9, 11. Снейр: шаги 5, 13.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 520 76">
+    <!-- Kick row -->
+    <text x="0" y="24" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Kick</text>
+    <rect x="36" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="66" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="186" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="306" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="8" width="28" height="24" rx="2" fill="#E65100" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="366" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="426" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="8" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- Snare row -->
+    <text x="0" y="58" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Snare</text>
+    <rect x="36" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="66" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="96" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="126" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="156" y="42" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="186" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="216" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="246" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="276" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="306" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="336" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="366" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="396" y="42" width="28" height="24" rx="2" fill="#1565C0" stroke="#999" stroke-width="0.75"></rect>
+    <rect x="426" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="456" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <rect x="486" y="42" width="28" height="24" rx="2" fill="#f5f5f5" stroke="#bbb" stroke-width="0.75"></rect>
+    <!-- Step number annotations -->
+    <text x="50" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">1</text>
+    <text x="170" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">5</text>
+    <text x="290" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">9</text>
+    <text x="350" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">11</text>
+    <text x="410" y="74" font-family="-apple-system, sans-serif" font-size="8" fill="#888" text-anchor="middle">13</text>
+  </svg>
+<div class="diagram-caption">«Billie Jean»: кик на 1, 9, 11 | снейр на 5, 13.</div>
+
+<p>Кик на шаге 11 создаёт <strong>синкопу</strong> — удар в неожиданном месте. Шаг 11 находится между битами 3 и 4, создавая ощущение подталкивания вперёд. Именно это делает грув «Billie Jean» таким захватывающим.</p>
+
+</section>
+<hr>
+
+<section id="ch-3">
+<h1>3. Хай-хэт и слои</h1>
+
+<p>Кик и снейр — два столпа. Но настоящие биты имеют третий элемент: хай-хэт. Он создаёт непрерывное движение — тикающий пульс, который придаёт биту драйв.</p>
+
+<h2>Роль хай-хэта</h2>
+
+<p>Яркий металлический звук — как часы, которые не останавливаются. Кик и снейр отмечают конкретные моменты; хай-хэт заполняет пространство между ними. Без него бит «стоит», с ним — «едет».</p>
+
+<h2>Три скорости хай-хэта</h2>
+
+<ul>
+<li><strong>Четвертные</strong> (quarter): шаги 1, 5, 9, 13 — медленно, просторно</li>
+<li><strong>Восьмые</strong> (eighth): каждый нечётный шаг — стандартный рок/поп грув</li>
+<li><strong>Шестнадцатые</strong> (sixteenth): все 16 шагов — быстро, энергично</li>
+</ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
+                <!-- Quarter notes -->
+                <text x="0" y="14" font-family="-apple-system, sans-serif" font-size="12" fill="#444">Четвертные</text>
+                <g transform="translate(0, 22)">
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+
+                <!-- Eighth notes -->
+                <text x="0" y="74" font-family="-apple-system, sans-serif" font-size="12" fill="#444">Восьмые</text>
+                <g transform="translate(0, 82)">
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+
+                <!-- Sixteenth notes -->
+                <text x="0" y="134" font-family="-apple-system, sans-serif" font-size="12" fill="#444">Шестнадцатые</text>
+                <g transform="translate(0, 142)">
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                </g>
+            </svg>
+<div class="diagram-caption">Каждое удвоение ощущается быстрее, хотя темп не меняется.</div>
+
+<h2>Полный трёхслойный бит</h2>
+
+<p>Комбинация: кик (фундамент) + снейр (бэкбит) + хай-хэт (движение).</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="148" viewBox="0 0 600 148">
+                <!-- Step numbers -->
+                <g font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">
+                    <text x="17" y="10">1</text>
+                    <text x="54" y="10">2</text>
+                    <text x="91" y="10">3</text>
+                    <text x="128" y="10">4</text>
+                    <text x="165" y="10">5</text>
+                    <text x="202" y="10">6</text>
+                    <text x="239" y="10">7</text>
+                    <text x="276" y="10">8</text>
+                    <text x="313" y="10">9</text>
+                    <text x="350" y="10">10</text>
+                    <text x="387" y="10">11</text>
+                    <text x="424" y="10">12</text>
+                    <text x="461" y="10">13</text>
+                    <text x="498" y="10">14</text>
+                    <text x="535" y="10">15</text>
+                    <text x="572" y="10">16</text>
+                </g>
+
+                <!-- Row labels -->
+                <text x="595" y="34" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end"></text>
+                <text x="595" y="70" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end"></text>
+                <text x="595" y="106" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end"></text>
+
+                <!-- Hi-Hat row: eighth notes (1,3,5,7,9,11,13,15) -->
+                <g transform="translate(0, 16)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Hi-Hat</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+
+                <!-- Snare row: steps 5, 13 -->
+                <g transform="translate(0, 52)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Snare</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+
+                <!-- Kick row: steps 1, 9 -->
+                <g transform="translate(0, 88)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Kick</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+            </svg>
+<div class="diagram-caption">Полный паттерн: три инструмента, три роли, работают вместе.</div>
+
+<h2>Как работает наслоение</h2>
+
+<p>Бит строится послойно. Каждый слой добавляет измерение:</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="52" viewBox="0 0 600 52">
+                <text x="0" y="10" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Только Kick — пульс, но статичный</text>
+                <g transform="translate(0, 18)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Kick</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+            </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="88" viewBox="0 0 600 88">
+                <text x="0" y="10" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Add snare — contrast and rhythm emerge</text>
+                <g transform="translate(0, 18)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Snare</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+                <g transform="translate(0, 54)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Kick</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+            </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="124" viewBox="0 0 600 124">
+                <text x="0" y="10" font-family="-apple-system, sans-serif" font-size="11" fill="#444">Add hi-hat — now it flows and grooves</text>
+                <g transform="translate(0, 18)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Hi-Hat</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+                <g transform="translate(0, 54)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Snare</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+                <g transform="translate(0, 90)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Kick</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+            </svg>
+
+<h2>«Stayin' Alive» — Bee Gees</h2>
+
+<p>Диско-классика с непрерывными хай-хэтами. Паттерн:</p>
+<ul>
+<li><strong>Хай-хэт:</strong> все 16 шагов (шестнадцатые — фирменный диско-драйв)</li>
+<li><strong>Снейр:</strong> шаги 5, 13</li>
+<li><strong>Кик:</strong> шаги 1, 4, 9, 12 (синкопированный диско-кик)</li>
+</ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="148" viewBox="0 0 600 148">
+                <!-- Step numbers -->
+                <g font-family="-apple-system, sans-serif" font-size="9" fill="#999" text-anchor="middle">
+                    <text x="17" y="10">1</text>
+                    <text x="54" y="10">2</text>
+                    <text x="91" y="10">3</text>
+                    <text x="128" y="10">4</text>
+                    <text x="165" y="10">5</text>
+                    <text x="202" y="10">6</text>
+                    <text x="239" y="10">7</text>
+                    <text x="276" y="10">8</text>
+                    <text x="313" y="10">9</text>
+                    <text x="350" y="10">10</text>
+                    <text x="387" y="10">11</text>
+                    <text x="424" y="10">12</text>
+                    <text x="461" y="10">13</text>
+                    <text x="498" y="10">14</text>
+                    <text x="535" y="10">15</text>
+                    <text x="572" y="10">16</text>
+                </g>
+
+                <!-- Hi-Hat row: all 16 steps -->
+                <g transform="translate(0, 16)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Hi-Hat</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#2E7D32" rx="2"></rect>
+                </g>
+
+                <!-- Snare row: steps 5, 13 -->
+                <g transform="translate(0, 52)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Snare</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#1565C0" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+
+                <!-- Kick row: steps 1, 4, 9, 12 -->
+                <g transform="translate(0, 88)">
+                    <text x="-5" y="18" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="end">Kick</text>
+                    <rect x="0" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="37" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="74" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="111" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="148" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="185" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="222" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="259" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="296" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="333" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="370" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="407" y="0" width="34" height="26" fill="#E65100" rx="2"></rect>
+                    <rect x="444" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="481" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="518" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                    <rect x="555" y="0" width="34" height="26" fill="#e8e8e8" rx="2"></rect>
+                </g>
+            </svg>
+
+<p>Непрерывный хай-хэт создаёт напор. Синкопированный кик (шаги 4 и 12 — между основными битами) создаёт отскок. Темп песни (~104 BPM) используется для обучения непрямому массажу сердца.</p>
+
+</section>
+<hr>
+
+<section id="ch-4">
+<h1>4. Велосити и динамика</h1>
+
+<p>До сих пор каждый активный шаг звучал с одинаковой громкостью. Настоящие барабанщики так не играют — одни удары громкие, другие едва слышны. Velocity (скорость/сила удара) превращает механический паттерн в живой грув.</p>
+
+<h2>Что такое Velocity</h2>
+
+<p>Шкала от 0 (тишина) до 127 (максимум). Выше = громче и ярче, ниже = тише и мягче.</p>
+
+<p>В GarageBand: переключись в режим Velocity, затем тяни вверх (громче) или вниз (тише) на каждом шаге.</p>
+
+<h2>Акценты</h2>
+
+<p>Акцент — намеренно громкий удар. Показывает, где ритмический фокус. Типичный паттерн хай-хэта: громко на битах (шаги 1, 5, 9, 13), тихо между ними.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="80" viewBox="0 0 640 80">
+                <!-- Row label -->
+                <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Hi-Hat</text>
+                <!-- Grid cells -->
+                <!-- Step 1 - accented -->
+                <rect x="60" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <!-- Step 2 - soft -->
+                <rect x="96" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 3 - soft -->
+                <rect x="132" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 4 - soft -->
+                <rect x="168" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 5 - accented -->
+                <rect x="204" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <!-- Step 6 - soft -->
+                <rect x="240" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 7 - soft -->
+                <rect x="276" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 8 - soft -->
+                <rect x="312" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 9 - accented -->
+                <rect x="348" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <!-- Step 10 - soft -->
+                <rect x="384" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 11 - soft -->
+                <rect x="420" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 12 - soft -->
+                <rect x="456" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 13 - accented -->
+                <rect x="492" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <!-- Step 14 - soft -->
+                <rect x="528" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 15 - soft -->
+                <rect x="564" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step 16 - soft -->
+                <rect x="600" y="22" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <!-- Step numbers -->
+                <text x="72" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">1</text>
+                <text x="216" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">5</text>
+                <text x="360" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">9</text>
+                <text x="504" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">13</text>
+            </svg>
+<div class="diagram-caption">Акцентированный хай-хэт: полная непрозрачность = громко, бледный = тихо.</div>
+
+<h2>Призрачные ноты (Ghost Notes)</h2>
+
+<p>Очень тихие удары (velocity 20–40) между основными. Почти неслышимы по отдельности, но заполняют пространство и добавляют грув. Чаще всего на снейре: основные удары громко на шагах 5, 13; ghost notes тихо рассыпаны вокруг.</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="80" viewBox="0 0 640 80">
+                <!-- Row label -->
+                <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Snare</text>
+                <!-- Step 1 - empty -->
+                <rect x="60" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 2 - empty -->
+                <rect x="96" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 3 - empty -->
+                <rect x="132" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 4 - empty -->
+                <rect x="168" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 5 - MAIN HIT (loud) -->
+                <rect x="204" y="22" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <!-- Step 6 - empty -->
+                <rect x="240" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 7 - ghost note -->
+                <rect x="276" y="22" width="32" height="32" rx="3" fill="#3366aa" opacity="0.25"></rect>
+                <!-- Step 8 - empty -->
+                <rect x="312" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 9 - empty -->
+                <rect x="348" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 10 - empty -->
+                <rect x="384" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 11 - ghost note -->
+                <rect x="420" y="22" width="32" height="32" rx="3" fill="#3366aa" opacity="0.25"></rect>
+                <!-- Step 12 - empty -->
+                <rect x="456" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 13 - MAIN HIT (loud) -->
+                <rect x="492" y="22" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <!-- Step 14 - empty -->
+                <rect x="528" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step 15 - ghost note -->
+                <rect x="564" y="22" width="32" height="32" rx="3" fill="#3366aa" opacity="0.25"></rect>
+                <!-- Step 16 - empty -->
+                <rect x="600" y="22" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <!-- Step numbers -->
+                <text x="216" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">5</text>
+                <text x="288" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">7</text>
+                <text x="432" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">11</text>
+                <text x="504" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">13</text>
+                <text x="576" y="72" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">15</text>
+            </svg>
+<div class="diagram-caption">Снейр с ghost notes: основные удары полные, ghost notes — еле видны.</div>
+
+<h2>Полный паттерн с динамикой</h2>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190">
+                <!-- Hi-Hat row -->
+                <text x="0" y="35" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Hi-Hat</text>
+                <rect x="60" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="96" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="132" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="168" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="204" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="240" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="276" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="312" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="348" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="384" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="420" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="456" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="492" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="528" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="564" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+                <rect x="600" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.35"></rect>
+
+                <!-- Snare row -->
+                <text x="0" y="90" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Snare</text>
+                <rect x="60" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="96" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="132" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="168" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="204" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <rect x="240" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="276" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="312" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="348" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="384" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="420" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="456" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="492" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <rect x="528" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="564" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="600" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+
+                <!-- Kick row -->
+                <text x="0" y="148" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Kick</text>
+                <rect x="60" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="96" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="132" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="168" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="204" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="240" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="276" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="312" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="348" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="384" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="420" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="456" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="492" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="528" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="564" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="600" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+
+                <!-- Step numbers along bottom -->
+                <text x="76" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">1</text>
+                <text x="148" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">3</text>
+                <text x="220" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">5</text>
+                <text x="292" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">7</text>
+                <text x="364" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">9</text>
+                <text x="436" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">11</text>
+                <text x="508" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">13</text>
+                <text x="580" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">15</text>
+            </svg>
+<div class="diagram-caption">Трёхслойный паттерн с velocity — прозрачность отражает громкость.</div>
+
+<h2>«Superstition» — Stevie Wonder</h2>
+
+<p>Мастер-класс по динамике. Паттерн:</p>
+<ul>
+<li><strong>Хай-хэт:</strong> все 16 шагов, акценты на 1, 5, 9, 13</li>
+<li><strong>Снейр:</strong> громко на 5, 13 + ghost notes на 3, 7, 10, 15</li>
+<li><strong>Кик:</strong> шаги 1, 7, 9, 11, 13 (синкопированный фанк)</li>
+</ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190">
+                <!-- Hi-Hat row -->
+                <text x="0" y="35" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Hi-Hat</text>
+                <rect x="60" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="96" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="132" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="168" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="204" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="240" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="276" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="312" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="348" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="384" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="420" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="456" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="492" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="1.0"></rect>
+                <rect x="528" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="564" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+                <rect x="600" y="14" width="32" height="32" rx="3" fill="#2e8b57" opacity="0.3"></rect>
+
+                <!-- Snare row -->
+                <text x="0" y="90" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Snare</text>
+                <rect x="60" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="96" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="132" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="168" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="204" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <rect x="240" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="276" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="312" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="348" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="384" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="420" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="456" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="492" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="1.0"></rect>
+                <rect x="528" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="564" y="70" width="32" height="32" rx="3" fill="#3366aa" opacity="0.2"></rect>
+                <rect x="600" y="70" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+
+                <!-- Kick row -->
+                <text x="0" y="148" font-family="-apple-system, sans-serif" font-size="13" fill="#333">Kick</text>
+                <rect x="60" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="96" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="132" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="168" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="204" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="240" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="276" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="312" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="348" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="384" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="420" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="456" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="492" y="126" width="32" height="32" rx="3" fill="#cc4422" opacity="1.0"></rect>
+                <rect x="528" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="564" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+                <rect x="600" y="126" width="32" height="32" rx="3" fill="none" stroke="#ddd" stroke-width="1"></rect>
+
+                <!-- Step numbers along bottom -->
+                <text x="76" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">1</text>
+                <text x="148" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">3</text>
+                <text x="220" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">5</text>
+                <text x="292" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">7</text>
+                <text x="364" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">9</text>
+                <text x="436" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">11</text>
+                <text x="508" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">13</text>
+                <text x="580" y="180" font-family="-apple-system, sans-serif" font-size="10" fill="#666" text-anchor="middle">15</text>
+            </svg>
+<div class="diagram-caption">«Superstition» — velocity heatmap.</div>
+
+<p>Ghost notes на снейре вплетаются между ударами кика, создавая переплетённый грув. Это фанк: каждый звук имеет конкретное динамическое назначение.</p>
+
+<h2>Как применять в GarageBand</h2>
+
+<ol>
+<li>Нажми кнопку Velocity под сеткой</li>
+<li>Тяни ВВЕРХ = громче, ВНИЗ = тише</li>
+<li>Тяни горизонтально для установки градиента на нескольких шагах</li>
+</ol>
+
+<p>Практический подход: начни со средней velocity (~80–90). Подними акценты до 120–127. Опусти ghost notes до 20–40.</p>
+
+</section>
+<hr>
+
+<section id="ch-5">
+<h1>5. Темп и жанр</h1>
+
+<p>Один и тот же паттерн на разной скорости — совершенно разная музыка. Темп (BPM) + размещение ударов + звук = жанр.</p>
+
+<h2>BPM</h2>
+
+<p>BPM — ударов в минуту. 60 BPM = 1 удар/сек. 120 BPM = 2 удара/сек. В GarageBand: нажми на число темпа в панели управления.</p>
+
+<p>16 шагов при 120 BPM = 2 секунды. При 60 BPM = 4 секунды.</p>
+
+<h2>Справочник жанров</h2>
+
+<table>
+<thead><tr><th>Жанр</th><th>BPM</th><th>Кик</th><th>Хай-хэт</th></tr></thead>
+<tbody>
+<tr><td>Хип-хоп</td><td>70–100</td><td>Разрежённый, тяжёлый</td><td>Быстрые 16-е или разрежённый</td></tr>
+<tr><td>Поп/Рок</td><td>100–130</td><td>Биты 1 и 3</td><td>Восьмые</td></tr>
+<tr><td>Хаус/EDM</td><td>120–130</td><td>Каждый бит (four-on-the-floor)</td><td>Офбиты</td></tr>
+<tr><td>Drum &amp; Bass</td><td>160–180</td><td>Синкопированный</td><td>Сложные паттерны</td></tr>
+</tbody>
+</table>
+
+<h2>Хип-хоп (70–90 BPM)</h2>
+
+<p>Медленно, разрежённо, мощно. Контраст медленного кика и быстрых хай-хэтов определяет трэп/хип-хоп.</p>
+<ul>
+<li><strong>Хай-хэт:</strong> все 16 шагов (шестнадцатые)</li>
+<li><strong>Снейр:</strong> шаги 5, 13</li>
+<li><strong>Кик:</strong> шаги 1, 4, 10, 13 (разрежённый, синкопа)</li>
+</ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 560 110">
+    <!-- Grid background -->
+    <rect x="70" y="10" width="480" height="90" fill="#fafafa" stroke="#ccc" stroke-width="0.5"></rect>
+    <!-- Beat dividers -->
+    <line x1="190" y1="10" x2="190" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="310" y1="10" x2="310" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="430" y1="10" x2="430" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <!-- Row labels -->
+    <text x="0" y="33" font-size="11" fill="#333">Hi-Hat</text>
+    <text x="0" y="63" font-size="11" fill="#333">Snare</text>
+    <text x="0" y="93" font-size="11" fill="#333">Kick</text>
+    <!-- Step numbers -->
+    <text x="78" y="8" font-size="8" fill="#999">1</text>
+    <text x="108" y="8" font-size="8" fill="#999">2</text>
+    <text x="138" y="8" font-size="8" fill="#999">3</text>
+    <text x="168" y="8" font-size="8" fill="#999">4</text>
+    <text x="198" y="8" font-size="8" fill="#999">5</text>
+    <text x="228" y="8" font-size="8" fill="#999">6</text>
+    <text x="258" y="8" font-size="8" fill="#999">7</text>
+    <text x="288" y="8" font-size="8" fill="#999">8</text>
+    <text x="318" y="8" font-size="8" fill="#999">9</text>
+    <text x="345" y="8" font-size="8" fill="#999">10</text>
+    <text x="375" y="8" font-size="8" fill="#999">11</text>
+    <text x="405" y="8" font-size="8" fill="#999">12</text>
+    <text x="435" y="8" font-size="8" fill="#999">13</text>
+    <text x="465" y="8" font-size="8" fill="#999">14</text>
+    <text x="495" y="8" font-size="8" fill="#999">15</text>
+    <text x="525" y="8" font-size="8" fill="#999">16</text>
+    <!-- Hi-Hat row (all 16 steps) - green -->
+    <rect x="74" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="104" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="134" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="164" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="194" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="224" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="254" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="284" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="314" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="344" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="374" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="404" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="434" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="464" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="494" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="524" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <!-- Snare row (steps 5, 13) - blue -->
+    <rect x="194" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <rect x="434" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <!-- Kick row (steps 1, 4, 10, 13) - orange -->
+    <rect x="74" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="164" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="344" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="434" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <!-- Empty step outlines for Snare -->
+    <rect x="74" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="104" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="134" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="164" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="224" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="254" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="284" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="314" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="344" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="374" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="404" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="464" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="494" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="524" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <!-- Empty step outlines for Kick -->
+    <rect x="104" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="134" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="194" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="224" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="254" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="284" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="314" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="374" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="404" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="464" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="494" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="524" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+  </svg>
+
+<p>Кит GarageBand: «Trap Door» или «808».</p>
+
+<h2>Хаус/EDM (125 BPM)</h2>
+
+<p>Four-on-the-floor: кик на каждом бите. Хай-хэты только между киками (офбиты). Простой паттерн, но непрерывный пульс создаёт движение.</p>
+<ul>
+<li><strong>Хай-хэт:</strong> шаги 3, 7, 11, 15 (только офбиты)</li>
+<li><strong>Снейр:</strong> шаги 5, 13</li>
+<li><strong>Кик:</strong> шаги 1, 5, 9, 13 (каждый бит)</li>
+</ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 560 110">
+    <!-- Grid background -->
+    <rect x="70" y="10" width="480" height="90" fill="#fafafa" stroke="#ccc" stroke-width="0.5"></rect>
+    <!-- Beat dividers -->
+    <line x1="190" y1="10" x2="190" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="310" y1="10" x2="310" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="430" y1="10" x2="430" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <!-- Row labels -->
+    <text x="0" y="33" font-size="11" fill="#333">Hi-Hat</text>
+    <text x="0" y="63" font-size="11" fill="#333">Snare</text>
+    <text x="0" y="93" font-size="11" fill="#333">Kick</text>
+    <!-- Step numbers -->
+    <text x="78" y="8" font-size="8" fill="#999">1</text>
+    <text x="108" y="8" font-size="8" fill="#999">2</text>
+    <text x="138" y="8" font-size="8" fill="#999">3</text>
+    <text x="168" y="8" font-size="8" fill="#999">4</text>
+    <text x="198" y="8" font-size="8" fill="#999">5</text>
+    <text x="228" y="8" font-size="8" fill="#999">6</text>
+    <text x="258" y="8" font-size="8" fill="#999">7</text>
+    <text x="288" y="8" font-size="8" fill="#999">8</text>
+    <text x="318" y="8" font-size="8" fill="#999">9</text>
+    <text x="345" y="8" font-size="8" fill="#999">10</text>
+    <text x="375" y="8" font-size="8" fill="#999">11</text>
+    <text x="405" y="8" font-size="8" fill="#999">12</text>
+    <text x="435" y="8" font-size="8" fill="#999">13</text>
+    <text x="465" y="8" font-size="8" fill="#999">14</text>
+    <text x="495" y="8" font-size="8" fill="#999">15</text>
+    <text x="525" y="8" font-size="8" fill="#999">16</text>
+    <!-- Hi-Hat row (steps 3, 7, 11, 15) - green -->
+    <rect x="74" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="104" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="134" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="164" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="194" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="224" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="254" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="284" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="314" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="344" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="374" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="404" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="434" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="464" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="494" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="524" y="18" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <!-- Snare row (steps 5, 13) - blue -->
+    <rect x="74" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="104" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="134" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="164" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="194" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <rect x="224" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="254" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="284" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="314" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="344" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="374" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="404" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="434" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <rect x="464" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="494" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="524" y="48" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <!-- Kick row (steps 1, 5, 9, 13) - orange -->
+    <rect x="74" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="104" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="134" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="164" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="194" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="224" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="254" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="284" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="314" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="344" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="374" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="404" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="434" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="464" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="494" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+    <rect x="524" y="78" width="24" height="20" rx="3" fill="none" stroke="#ddd"></rect>
+  </svg>
+
+<p>Кит GarageBand: «Neon» или «Hacienda».</p>
+
+<h2>Сравнение</h2>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 560 110">
+    <rect x="70" y="10" width="480" height="90" fill="#fafafa" stroke="#ccc" stroke-width="0.5"></rect>
+    <line x1="190" y1="10" x2="190" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="310" y1="10" x2="310" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="430" y1="10" x2="430" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <text x="0" y="33" font-size="11" fill="#333">Hi-Hat</text>
+    <text x="0" y="63" font-size="11" fill="#333">Snare</text>
+    <text x="0" y="93" font-size="11" fill="#333">Kick</text>
+    <!-- Hi-Hat: all 16 -->
+    <rect x="74" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="104" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="134" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="164" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="194" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="224" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="254" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="284" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="314" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="344" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="374" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="404" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="434" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="464" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="494" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="524" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <!-- Snare: 5, 13 -->
+    <rect x="194" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <rect x="434" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <!-- Kick: 1, 4, 10, 13 -->
+    <rect x="74" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="164" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="344" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="434" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 560 110">
+    <rect x="70" y="10" width="480" height="90" fill="#fafafa" stroke="#ccc" stroke-width="0.5"></rect>
+    <line x1="190" y1="10" x2="190" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="310" y1="10" x2="310" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <line x1="430" y1="10" x2="430" y2="100" stroke="#bbb" stroke-width="0.5" stroke-dasharray="2,2"></line>
+    <text x="0" y="33" font-size="11" fill="#333">Hi-Hat</text>
+    <text x="0" y="63" font-size="11" fill="#333">Snare</text>
+    <text x="0" y="93" font-size="11" fill="#333">Kick</text>
+    <!-- Hi-Hat: 3, 7, 11, 15 -->
+    <rect x="134" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="254" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="374" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <rect x="494" y="18" width="24" height="20" rx="3" fill="#4a9e6f"></rect>
+    <!-- Snare: 5, 13 -->
+    <rect x="194" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <rect x="434" y="48" width="24" height="20" rx="3" fill="#4a7fb5"></rect>
+    <!-- Kick: 1, 5, 9, 13 -->
+    <rect x="74" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="194" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="314" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+    <rect x="434" y="78" width="24" height="20" rx="3" fill="#d4793a"></rect>
+  </svg>
+
+<p>Одна сетка, те же инструменты, совершенно разная музыка. Комбинация темпа и размещения определяет жанр.</p>
+
+<h2>Один паттерн, разные темпы</h2>
+
+<p>Базовый бит (кик 1, 9 / снейр 5, 13 / хай-хэт восьмые):</p>
+<ul>
+<li><strong>70 BPM</strong> — медленный хип-хоп грув</li>
+<li><strong>120 BPM</strong> — стандартный рок-бит</li>
+<li><strong>160 BPM</strong> — панк или drum &amp; bass</li>
+</ul>
+
+<h2>Выбор кита</h2>
+
+<ul>
+<li><strong>Акустические киты:</strong> рок, поп, джаз</li>
+<li><strong>808/Trap:</strong> хип-хоп, трэп, lo-fi</li>
+<li><strong>Электронные:</strong> хаус, техно, EDM</li>
+</ul>
+
+<p>В GarageBand: нажми на имя кита внизу слева для переключения.</p>
+
+</section>
+<hr>
+
+<section id="ch-6">
+<h1>6. Структура песни</h1>
+
+<p>Один зацикленный паттерн — это луп. Песня — несколько паттернов, организованных в секции: напряжение, разрешение, сюрприз.</p>
+
+<h2>Секции песни</h2>
+
+<ul>
+<li><strong>Интро</strong> — задаёт настроение, начинает разрежённо</li>
+<li><strong>Куплет</strong> — основное тело, умеренная энергия</li>
+<li><strong>Припев</strong> — пик энергии, максимальная плотность</li>
+<li><strong>Бридж</strong> — контраст, сюрприз перед возвратом к припеву</li>
+<li><strong>Аутро</strong> — затухание</li>
+</ul>
+
+<p>Типичный порядок: Интро → Куплет → Припев → Куплет → Припев → Бридж → Припев → Аутро</p>
+
+<h2>Как меняются биты между секциями</h2>
+
+<ul>
+<li><strong>Интро:</strong> минимально — только хай-хэт или простой кик</li>
+<li><strong>Куплет:</strong> базовый бит, средняя плотность</li>
+<li><strong>Припев:</strong> полный комплект, больше ударов, быстрые хай-хэты</li>
+<li><strong>Бридж:</strong> урезанный или совсем другой паттерн</li>
+</ul>
+
+<p>Одни и те же инструменты, разная плотность = разная энергия.</p>
+
+<h2>Техники вариации</h2>
+
+<ul>
+<li><strong>Добавление:</strong> вводи новый звук (клэп, шейкер)</li>
+<li><strong>Убирание:</strong> убери элемент (сними кик на 4 такта)</li>
+<li><strong>Плотность:</strong> переключи хай-хэт с восьмых на шестнадцатые</li>
+<li><strong>Синкопа:</strong> сдвинь кик с основных долей</li>
+</ul>
+
+<p>Простейшая вариация: возьми паттерн припева и убери один слой — это твой куплет.</p>
+
+<h2>Нарастание (Build-Up)</h2>
+
+<p>Создаёт ожидание перед сменой секции. Постепенно добавляй элементы за 2–4 такта:</p>
+<ol>
+<li>Такт 1: только хай-хэт</li>
+<li>Такт 2: хай-хэт + кик</li>
+<li>Такт 3: хай-хэт + кик + снейр</li>
+<li>Такт 4: полный паттерн (припев «падает»)</li>
+</ol>
+
+<h2>«Uptown Funk» — Bruno Mars</h2>
+
+<p>Чёткое различие энергии между секциями.</p>
+
+<h3>Куплет</h3>
+<ul>
+<li>Кик: шаги 1, 7, 9, 11</li>
+<li>Снейр: шаги 5, 13</li>
+<li>Хай-хэт: восьмые (1, 3, 5, 7, 9, 11, 13, 15)</li>
+</ul>
+
+<h3>Припев</h3>
+<ul>
+<li>Кик: шаги 1, 4, 7, 9, 11, 13</li>
+<li>Снейр: шаги 5, 13</li>
+<li>Хай-хэт: все 16 шагов (шестнадцатые)</li>
+<li>Клэп: шаги 5, 13 (поверх снейра для мощности)</li>
+</ul>
+
+<p>Та же песня, те же инструменты — но в припеве больше ударов кика и быстрее хай-хэты. Маленькие изменения, большая разница в энергии.</p>
+
+<h2>Запись в GarageBand</h2>
+
+<ol>
+<li>Создай паттерн в Beat Sequencer</li>
+<li>Нажми Record — паттерн записывается как луп на дорожку</li>
+<li>Нажми Stop</li>
+<li>Измени паттерн, запиши новую секцию</li>
+<li>В Tracks View расставь записанные регионы в нужном порядке</li>
+</ol>
+
+<h2>Упражнение</h2>
+
+<p>Создай 3 вариации одного бита:</p>
+<ul>
+<li><strong>Паттерн A</strong> (разрежённый — интро/куплет): кик + хай-хэт</li>
+<li><strong>Паттерн B</strong> (полный — припев): кик + снейр + хай-хэт 16-е + перкуссия</li>
+<li><strong>Паттерн C</strong> (бридж): только снейр + редкий кик</li>
+</ul>
+
+<p>Запиши и расставь: A → B → A → B → C → B. Это уже структура песни.</p>
+
+</section>
+<hr>
+
+<section id="ch-7">
+<h1>7. Продвинутые функции и композиция</h1>
+
+<p>У тебя есть все базовые навыки. Этот финальный раздел знакомит с оставшимися функциями Beat Sequencer: Note Repeat, Chance, Loop Start/End — и проводит через процесс создания собственной композиции.</p>
+
+<h2>Note Repeat</h2>
+
+<p>Делит один шаг на быстрые повторения — дробь, трель хай-хэта, филл. Один шаг можно разбить на 2, 3, 4, 6 или 8 ударов в том же временном отрезке.</p>
+
+<p><strong>В GarageBand:</strong> режим Note Repeat → тяни ВВЕРХ на шаге для увеличения повторений.</p>
+
+<p>Применение:</p>
+<ul>
+<li>Дробь снейра на последних 1–2 шагах такта → филл перед новой секцией</li>
+<li>Трель хай-хэта для ритмического интереса</li>
+<li>Нарастание напряжения перед припевом</li>
+</ul>
+
+<h2>Chance</h2>
+
+<p>Вводит вероятность: шаг с пониженным Chance может сработать или не сработать при каждом проходе петли. Создаёт органическую вариацию без ручного редактирования.</p>
+
+<p><strong>В GarageBand:</strong> режим Chance → тяни ВНИЗ для снижения вероятности.</p>
+
+<p>Применение:</p>
+<ul>
+<li>Хай-хэт с некоторыми шагами на 50% — естественная вариация</li>
+<li>Ghost notes с вероятностью 30% — непредсказуемая текстура</li>
+<li>Доп. перкуссия на 40–60% — случайные сюрпризы</li>
+</ul>
+
+<blockquote>Chance имитирует то, что живые барабанщики делают неосознанно — мелкие вариации, из-за которых повторение звучит живым.</blockquote>
+
+<h2>Loop Start/End</h2>
+
+<p>Каждая строка может иметь свою длину петли. По умолчанию все — 16 шагов. Но можно установить одну строку на 12 или 7 шагов.</p>
+
+<p>Разные длины создают <strong>полиритмию</strong> — паттерны фазируются друг относительно друга и совпадают только через много повторений.</p>
+
+<p><strong>В GarageBand:</strong> режим Loop Start/End → двигай края строки.</p>
+
+<h2>Процесс создания бита</h2>
+
+<ol>
+<li>Выбери жанр и темп (см. таблицу из главы 5)</li>
+<li>Размести кик — где фундамент?</li>
+<li>Добавь снейр — установи бэкбит или синкопу</li>
+<li>Выбери паттерн хай-хэта — какая плотность подходит?</li>
+<li>Примени velocity — акценты на важных долях, ghost notes тихо</li>
+<li>Попробуй Note Repeat — нужен ли филл или дробь?</li>
+<li>Добавь Chance на второстепенные элементы</li>
+<li>Создай вариацию для второй секции</li>
+</ol>
+
+<h2>Справочник: все режимы Beat Sequencer</h2>
+
+<table>
+<thead><tr><th>Режим</th><th>Функция</th><th>Жест</th></tr></thead>
+<tbody>
+<tr><td>Step On/Off</td><td>Включить/выключить шаги</td><td>Тап</td></tr>
+<tr><td>Velocity</td><td>Громкость каждого шага</td><td>Вверх/вниз</td></tr>
+<tr><td>Note Repeat</td><td>Разбить шаг на дробь</td><td>Вверх = больше повторов</td></tr>
+<tr><td>Chance</td><td>Вероятность срабатывания</td><td>Вниз = реже</td></tr>
+<tr><td>Loop Start/End</td><td>Границы петли строки</td><td>Двигать края</td></tr>
+</tbody>
+</table>
+
+<p><strong>Дополнительно:</strong></p>
+<ul>
+<li>Patterns: сохранить/загрузить паттерны</li>
+<li>Kit name: сменить набор звуков</li>
+<li>Inspector: длина паттерна, swing, разрешение</li>
+<li>Dice: генерация случайного паттерна</li>
+<li>Record: запись паттерна на дорожку</li>
+</ul>
+
+<h2>Swing</h2>
+
+<p>Swing сдвигает тайминг офбитных шагов чуть позже — создаёт «шаффл».</p>
+<ul>
+<li><strong>0%</strong> — ровно, механически</li>
+<li><strong>~30%</strong> — расслабленно, по-человечески (хип-хоп, lo-fi)</li>
+<li><strong>50%+</strong> — выраженный шаффл (джаз, свинг)</li>
+</ul>
+
+<h2>Что дальше</h2>
+
+<ul>
+<li>Добавь басовую линию через Smart Bass</li>
+<li>Добавь мелодию через клавиатуру</li>
+<li>Используй Apple Loops для дополнительных инструментов</li>
+<li>Записывай вокал или живые инструменты поверх битов</li>
+<li>Экспортируй и делись</li>
+</ul>
+
+</section>
+
+
+
+</body></html>
